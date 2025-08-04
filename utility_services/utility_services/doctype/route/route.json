@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:route_name",
+ "creation": "2025-07-31 10:54:25.665369",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_rkpj",
+  "meter",
+  "route_name",
+  "read_type",
+  "utility_service",
+  "column_break_6wvj",
+  "premise",
+  "area",
+  "sub_area",
+  "meter_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_rkpj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route_name",
+   "fieldtype": "Data",
+   "label": "Route Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "utility_service",
+   "fieldtype": "Table",
+   "label": "Utility Service",
+   "options": "Utility Services"
+  },
+  {
+   "fieldname": "read_type",
+   "fieldtype": "Select",
+   "label": "Read Type",
+   "options": "\nManual\nSmart\nPhoto\nEstimated"
+  },
+  {
+   "fieldname": "premise",
+   "fieldtype": "Data",
+   "label": "Premise"
+  },
+  {
+   "fieldname": "sub_area",
+   "fieldtype": "Data",
+   "label": "Sub Area"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area"
+  },
+  {
+   "fieldname": "meter_count",
+   "fieldtype": "Data",
+   "label": "Meter Count"
+  },
+  {
+   "fieldname": "column_break_6wvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meter",
+   "fieldtype": "Link",
+   "label": "Meter",
+   "options": "Meter"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-04 10:26:28.067742",
+ "modified_by": "Administrator",
+ "module": "Utility Services",
+ "name": "Route",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

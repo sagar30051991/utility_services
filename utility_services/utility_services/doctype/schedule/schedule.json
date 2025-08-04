@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "{route}-{schedule_date}",
+ "creation": "2025-08-01 14:46:15.907022",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vyre",
+  "meter",
+  "route",
+  "schedule_date",
+  "recurring",
+  "frequency",
+  "due_days",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vyre",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "meter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Meter",
+   "options": "Meter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Route",
+   "options": "Route",
+   "reqd": 1
+  },
+  {
+   "fieldname": "schedule_date",
+   "fieldtype": "Date",
+   "label": "Schedule Date"
+  },
+  {
+   "fieldname": "recurring",
+   "fieldtype": "Select",
+   "label": "Recurring",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "\nDaily\nWeekly\nMonthly\nQuarterly"
+  },
+  {
+   "fieldname": "due_days",
+   "fieldtype": "Data",
+   "label": "Due Days"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-04 10:28:06.590034",
+ "modified_by": "Administrator",
+ "module": "Utility Services",
+ "name": "Schedule",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

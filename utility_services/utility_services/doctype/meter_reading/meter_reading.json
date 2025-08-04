@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "{meter_number}-{meter_reading_date}",
+ "creation": "2025-08-04 15:03:33.113310",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "meter_number",
+  "meter_reading_date",
+  "previous_reading_unit",
+  "current_reading",
+  "total_unit_consumed"
+ ],
+ "fields": [
+  {
+   "fieldname": "meter_number",
+   "fieldtype": "Link",
+   "label": "Meter Number",
+   "options": "Meter"
+  },
+  {
+   "fieldname": "meter_reading_date",
+   "fieldtype": "Date",
+   "label": "Meter Reading Date"
+  },
+  {
+   "fieldname": "previous_reading_unit",
+   "fieldtype": "Int",
+   "label": "Previous Reading Unit"
+  },
+  {
+   "fieldname": "current_reading",
+   "fieldtype": "Int",
+   "label": "Current Reading "
+  },
+  {
+   "fieldname": "total_unit_consumed",
+   "fieldtype": "Int",
+   "label": "Total Unit Consumed"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-04 16:46:42.432106",
+ "modified_by": "Administrator",
+ "module": "Utility Services",
+ "name": "Meter Reading",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
