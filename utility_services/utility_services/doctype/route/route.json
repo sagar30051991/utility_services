@@ -7,15 +7,18 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_rkpj",
-  "meter",
   "route_name",
+  "meter",
   "read_type",
-  "utility_service",
   "column_break_6wvj",
   "premise",
   "area",
   "sub_area",
-  "meter_count"
+  "meter_count",
+  "section_break_nv4g",
+  "utility_service",
+  "section_break_phcg",
+  "customer_route_details"
  ],
  "fields": [
   {
@@ -69,12 +72,26 @@
    "fieldtype": "Link",
    "label": "Meter",
    "options": "Meter"
+  },
+  {
+   "fieldname": "section_break_nv4g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_phcg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer_route_details",
+   "fieldtype": "Table",
+   "label": "Customer Route Details",
+   "options": "Customer Route Details"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-04 10:26:28.067742",
+ "modified": "2025-08-05 14:36:07.521441",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Route",
