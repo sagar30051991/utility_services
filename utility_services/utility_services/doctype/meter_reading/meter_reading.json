@@ -10,8 +10,7 @@
   "meter_reading_date",
   "previous_reading_unit",
   "current_reading",
-  "total_unit_consumed",
-  "amended_from"
+  "total_unit_consumed"
  ],
  "fields": [
   {
@@ -30,7 +29,8 @@
    "fetch_from": "meter_number.previous_reading",
    "fieldname": "previous_reading_unit",
    "fieldtype": "Int",
-   "label": "Previous Reading Unit"
+   "label": "Previous Reading Unit",
+   "read_only": 1
   },
   {
    "fieldname": "current_reading",
@@ -40,24 +40,18 @@
   {
    "fieldname": "total_unit_consumed",
    "fieldtype": "Int",
-   "label": "Total Unit Consumed"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Meter Reading",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "label": "Total Unit Consumed",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2025-08-06 12:37:04.009024",
+=======
+ "modified": "2025-08-06 15:42:51.755617",
+>>>>>>> 100ae2d ([Changes] total unit calculation)
  "modified_by": "rupeshtandale3@gmail.com",
  "module": "Utility Services",
  "name": "Meter Reading",

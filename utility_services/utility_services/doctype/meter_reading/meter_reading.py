@@ -13,19 +13,6 @@ class MeterReading(Document):
 
 	def calculate_total_unit_consumed(self):
 
-		# previous_reading_from_latest_reading = frappe.db.get_all(
-		# 	'Meter Reading',
-		# 	filters = {"meter_number":self.meter_number},
-		# 	fields = ["meter_number","previous_reading_unit"],
-		# 	order_by = "creation desc",
-		# 	limit = 1
-		# )
-
-		# if (previous_reading_from_latest_reading and previous_reading_from_latest_reading[0]["previous_reading_unit"] != 0):
-		# 	previous_reading = previous_reading_from_latest_reading[0]["previous_reading_unit"]
-		# else:
-		# 	previous_reading = frappe.db.get_value("Meter",self.meter_number,"previous_reading")
-
 		previous_reading = self.previous_reading_unit
 
 		
