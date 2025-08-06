@@ -26,6 +26,8 @@
    "label": "Meter Reading Date"
   },
   {
+   "default": "0",
+   "fetch_from": "meter_number.previous_reading",
    "fieldname": "previous_reading_unit",
    "fieldtype": "Int",
    "label": "Previous Reading Unit"
@@ -55,8 +57,8 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-06 12:06:04.360335",
- "modified_by": "Administrator",
+ "modified": "2025-08-06 12:37:04.009024",
+ "modified_by": "rupeshtandale3@gmail.com",
  "module": "Utility Services",
  "name": "Meter Reading",
  "naming_rule": "Expression (old style)",
