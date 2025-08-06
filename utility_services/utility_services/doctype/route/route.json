@@ -8,17 +8,17 @@
  "field_order": [
   "section_break_rkpj",
   "route_name",
-  "meter",
   "read_type",
+  "meter_count",
   "column_break_6wvj",
   "premise",
   "area",
   "sub_area",
-  "meter_count",
   "section_break_nv4g",
   "utility_service",
   "section_break_phcg",
-  "customer_route_details"
+  "customer_route_details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -68,12 +68,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "meter",
-   "fieldtype": "Link",
-   "label": "Meter",
-   "options": "Meter"
-  },
-  {
    "fieldname": "section_break_nv4g",
    "fieldtype": "Section Break"
   },
@@ -86,12 +80,23 @@
    "fieldtype": "Table",
    "label": "Customer Route Details",
    "options": "Customer Route Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Route",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-08-05 14:36:07.521441",
+ "modified": "2025-08-06 12:38:04.581442",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Route",
