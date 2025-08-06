@@ -15,8 +15,6 @@
   "area",
   "sub_area",
   "section_break_nv4g",
-  "utility_service",
-  "section_break_phcg",
   "customer_route_details",
   "amended_from"
  ],
@@ -30,12 +28,6 @@
    "fieldtype": "Data",
    "label": "Route Name",
    "unique": 1
-  },
-  {
-   "fieldname": "utility_service",
-   "fieldtype": "Table",
-   "label": "Utility Service",
-   "options": "Utility Services"
   },
   {
    "fieldname": "read_type",
@@ -72,10 +64,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "section_break_phcg",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "customer_route_details",
    "fieldtype": "Table",
    "label": "Customer Route Details",
@@ -96,7 +84,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-06 12:38:04.581442",
+ "modified": "2025-08-06 14:06:12.677035",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Route",
