@@ -10,7 +10,8 @@
   "meter_reading_date",
   "previous_reading_unit",
   "current_reading",
-  "total_unit_consumed"
+  "total_unit_consumed",
+  "amended_from"
  ],
  "fields": [
   {
@@ -42,14 +43,24 @@
    "fieldtype": "Int",
    "label": "Total Unit Consumed",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Meter Reading",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
-
- "modified": "2025-08-06 15:42:51.755617",
- "modified_by": "rupeshtandale3@gmail.com",
+ "modified": "2025-08-07 18:18:48.257804",
+ "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Meter Reading",
  "naming_rule": "Expression (old style)",
