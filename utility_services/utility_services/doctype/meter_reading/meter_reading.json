@@ -47,11 +47,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
-<<<<<<< HEAD
- "modified": "2025-08-06 12:37:04.009024",
-=======
+
  "modified": "2025-08-06 15:42:51.755617",
->>>>>>> 100ae2d ([Changes] total unit calculation)
  "modified_by": "rupeshtandale3@gmail.com",
  "module": "Utility Services",
  "name": "Meter Reading",

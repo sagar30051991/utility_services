@@ -10,6 +10,8 @@ class MeterReading(Document):
 	def before_insert(self):
 		self.calculate_total_unit_consumed()
 
+	def validate(self):
+		self.creating_item_price()
 
 	def calculate_total_unit_consumed(self):
 
@@ -34,4 +36,30 @@ class MeterReading(Document):
 		self.previous_reading_unit = frappe.db.get_value("Meter",self.meter_number,"previous_reading")
 
 		frappe.db.set_value("Meter",self.meter_number,"previous_reading",current_reading)
+
+	
+	# def creating_item_price(self):
+
+	# 	total_unit = self.total_unit_consumed
+
+	# 	rate_config = frappe.get_doc("Rate configuration")
+
+	# 	rate = None
+
+	# 	for configs in rate_config.reading_rate_configuration:
+	# 		if configs.range:
+	# 			min_value,max_value = [float(unit.strip()) for unit in configs.range.split("-")]
+	# 			if min_value <= total_unit <= max_value:
+	# 				rate = self.total_unit_consumed * configs.rate
+
+	# 	doc_customer = frappe.get_doc("Customer",filters={"custom_utility_services"})
+
+	# 	parent = frappe.db.sql(
+	# 		"""
+	# 		SELECT
+	# 		  * 
+	# 		FROM
+	# 			`tabUtility Services` 
+	# 		"""
+	# 	)		
 	
