@@ -26,9 +26,12 @@
    "label": "Meter Reading Date"
   },
   {
+   "default": "0",
+   "fetch_from": "meter_number.previous_reading",
    "fieldname": "previous_reading_unit",
    "fieldtype": "Int",
-   "label": "Previous Reading Unit"
+   "label": "Previous Reading Unit",
+   "read_only": 1
   },
   {
    "fieldname": "current_reading",
@@ -38,7 +41,8 @@
   {
    "fieldname": "total_unit_consumed",
    "fieldtype": "Int",
-   "label": "Total Unit Consumed"
+   "label": "Total Unit Consumed",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -55,7 +59,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-06 12:06:04.360335",
+ "modified": "2025-08-07 18:18:48.257804",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Meter Reading",
