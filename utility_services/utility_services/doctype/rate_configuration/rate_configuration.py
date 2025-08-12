@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Rateconfiguration(Document):
+class RateConfiguration(Document):
 	pass

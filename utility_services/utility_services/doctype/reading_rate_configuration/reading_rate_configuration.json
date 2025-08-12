@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_m8mk",
-  "range",
+  "from",
+  "to",
   "rate"
  ],
  "fields": [
@@ -15,24 +16,29 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "range",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Range",
-   "options": "1-10\n11-30\n31-50\n51-70\n71-100"
-  },
-  {
    "fieldname": "rate",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Rate"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "To"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-08 21:05:23.814309",
+ "modified": "2025-08-12 15:41:25.792715",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Reading Rate Configuration",
