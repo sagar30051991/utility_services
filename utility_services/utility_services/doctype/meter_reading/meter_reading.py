@@ -46,22 +46,10 @@ class MeterReading(Document):
 
 		total_unit = self.total_unit_consumed
 
-		rate_config = frappe.get_doc("Rate configuration")
-
-		rate = None
-
-		for configs in rate_config.reading_rate_configuration:
-			if configs.range:
-				min_value,max_value = [float(unit.strip()) for unit in configs.range.split("-")]
-				if min_value <= total_unit <= max_value:
-					rate = self.total_unit_consumed * configs.rate
-
-		meter_details = frappe.get_value("Meter",self.meter_number,["utility_service"],as_dict=1)
-
 		customer_name = frappe.db.sql(
 			"""
 			SELECT
-			  cm.name,cm.default_price_list 
+			  cm.name,cm.default_price_list,cm.custom_rate_plan,cm.custom_is_fixed_rate 
 			FROM
 				`tabUtility Services` as us
 			LEFT JOIN
@@ -73,6 +61,19 @@ class MeterReading(Document):
 
 			"""%(self.meter_number),as_dict=1
 		)	
+
+		rate_config = frappe.get_doc("Rate Configuration",customer_name[0]['custom_rate_plan'])
+
+		rate = None
+
+		if rate_config.is_fixed and customer_name[0]['custom_is_fixed_rate'] == 1:
+			rate = rate_config.fixed_rate
+		else:
+			for configs in rate_config.reading_rate_configuration:
+				if float(configs.from_value) <= total_unit <= float(configs.to_value):
+					rate = self.total_unit_consumed * configs.rate
+
+		meter_details = frappe.get_value("Meter",self.meter_number,["utility_service"],as_dict=1)
 
 		new_action = {
 			'doctype':'Item Price',
@@ -89,7 +90,7 @@ class MeterReading(Document):
 
 		frappe.get_doc(new_action).insert(ignore_permissions=True)
 
-		# frappe.log_error(title={"Customer"},message=frappe.as_json(customer_name))	
+		# frappe.log_error(title={"Customer"},message=frappe.as_json(rate_config))	
 		# frappe.log_error(title={"Meter details"},message=frappe.as_json(meter_details))	
 	
 	def create_sales_invoice(self):
@@ -98,7 +99,7 @@ class MeterReading(Document):
 		customer_name = frappe.db.sql(
 			"""
 			SELECT
-				cm.name
+				cm.name,cm.custom_is_fixed_rate,cm.custom_rate_plan
 			FROM
 				`tabUtility Services` as us
 			LEFT JOIN 
@@ -112,15 +113,19 @@ class MeterReading(Document):
 
 		item_price_details = frappe.db.get_all("Item Price",filters={"customer":customer_name[0]['name']},fields=["*"],order_by="creation desc",limit=1)
 
-		rate_config = frappe.get_doc("Rate configuration")
+		rate_config = frappe.get_doc("Rate Configuration")
 
 		rate = None
-
-		for configs in rate_config.reading_rate_configuration:
-			if configs.range:
-				min_range,max_range = [float(x.strip()) for x in configs.range.split("-")]
-				if min_range <= item_price_details[0]["packing_unit"] <= max_range:
-					rate = configs.rate
+		qty = None
+		if customer_name[0]['custom_is_fixed_rate'] == 1:
+			rate = item_price_details[0]["price_list_rate"]
+			qty = 1
+		else:
+			qty = self.total_unit_consumed
+			rate_config = frappe.get_doc("Rate Configuration",customer_name[0]['custom_rate_plan'])
+			for configs in rate_config.reading_rate_configuration:
+				if configs.from_value <= item_price_details[0]["packing_unit"] <= configs.to_value:
+						rate = configs.rate
 
 
 		sales_invoice_data = {
@@ -133,7 +138,7 @@ class MeterReading(Document):
 			'total' : item_price_details[0]["price_list_rate"],
 			'items' : [{
 				'item_code' : item_price_details[0]["item_code"],
-				'qty' : item_price_details[0]["packing_unit"],
+				'qty' : qty,
 				'rate': rate
 			}]  
 		}
