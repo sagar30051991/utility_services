@@ -40,14 +40,13 @@
   {
    "fieldname": "fixed_rate",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Fixed Rate"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-12 16:48:07.605539",
+ "modified": "2025-08-13 22:19:21.165801",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Rate Configuration",
