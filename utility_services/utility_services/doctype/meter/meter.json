@@ -58,7 +58,8 @@
    "fieldname": "utility_service",
    "fieldtype": "Link",
    "label": "Utility Service",
-   "options": "Item"
+   "options": "Item",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_ujzu",
@@ -123,7 +124,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-06 13:11:37.078353",
+ "modified": "2025-09-01 17:44:18.926039",
  "modified_by": "Administrator",
  "module": "Utility Services",
  "name": "Meter",
